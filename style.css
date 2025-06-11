@@ -1,98 +1,796 @@
+@font-face {
+  font-family: 'Sora Medium';
+  src: url('fonts/Sora-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sora Regular';
+  src: url('fonts/Sora-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+  font-weight: 600;  /* SemiBold is usually around 600 */
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  font-family: 'Sora Medium', sans-serif;
+  background-color: white;
+  color: black;
+  padding: 0;
 }
 
-header {
-  background: #222;
-  padding: 1rem 2rem;
-  color: white;
-}
-
-nav {
+/* NAVBAR */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: #4CAF50;
-  color: white;
-}
-
-.hero h1 span {
-  color: #ffeb3b;
-}
-
-.about, .projects, .contact {
-  padding: 3rem 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.projects .project-list {
-  display: flex;
-  gap: 1rem;
+  padding: 20px 50px;
+  background-color: white;
   flex-wrap: wrap;
 }
 
-.project-card {
-  background: white;
-  padding: 1rem;
-  flex: 1 1 45%;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #eee;
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Inter';
 }
 
-.contact form {
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  gap: 30px;
+  font-weight: 600;
+  flex-wrap: wrap;
 }
 
-.contact input, .contact textarea {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 550;
+  font-family: 'Inter';
 }
 
-.contact button {
-  background: #4CAF50;
+.resume-button {
+  background-color: black;
   color: white;
-  padding: 0.8rem;
-  border: none;
-  cursor: pointer;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+/* INTRO SECTION */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 90px 150px;
+  flex-wrap: wrap;
+  gap: 40px;
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+.intro-text {
+  max-width: 600px;
+  flex: 1;
+  font-family: 'Inter';
+  padding: 100px 0px;
+}
+
+.intro-text h1 {
+  font-size: 50px;
+  margin-top: 10px;
+  font-family: 'Inter';
+  font-weight: 800;
+}
+
+.intro-text h2 {
+  font-size: 50px;
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+.intro-text p {
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Inter';
+  text-align: justify;
+}
+
+.line {
+  width: 600px;
+  height: 3px;
+  background-color: black;
+  margin-top: 20px;
+}
+
+.red {
+  color: #B40310;
+  font-family: 'Inter';
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'JUST Sans Outline ExBold';
+  src: url('fonts/JUST Sans OutlineExBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+.outline {
+  padding: 2px 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  text-shadow:
+     -2px -2px 0 black,
+      2px -2px 0 black,
+     -2px  2px 0 black,
+      2px  2px 0 black;
+}
+
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.circle-placeholder {
+  width: 550px;
+  height: 550px;
+  background-color: black;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.resume-button1 {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  margin-left: 0;
+  margin-top: 10px;
+  display: inline-block;
 }
 
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+/* 📱 RESPONSIVE MEDIA QUERIES */
+
+@media (max-width: 992px) {
+  .intro {
+    padding: 60px 40px;
+    gap: 30px;
+  }
+
+  .intro-text {
+    padding: 60px 0;
+  }
+
+  .circle-placeholder {
+    width: 400px;
+    height: 400px;
+  }
+
+  .intro-text h1,
+  .intro-text h2 {
+    font-size: 42px;
+  }
+
+  .outline {
+    font-size: 42px;
+  }
+
+  .line {
+    width: 100%;
+  }
 }
+
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .intro-text {
+    padding: 40px 0;
+    max-width: 100%;
+  }
+
+  .intro-text h1,
+  .intro-text h2 {
+    font-size: 36px;
+  }
+
+  .outline {
+    font-size: 36px;
+  }
+
+  .circle-placeholder {
+    width: 300px;
+    height: 300px;
+  }
+
+  .line {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h1,
+  .intro-text h2 {
+    font-size: 28px;
+  }
+
+  .outline {
+    font-size: 28px;
+  }
+
+  .circle-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  .resume-button1 {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .line {
+    width: 100%;
+  }
+}
+
+
+
+/* SKILLS */
+.skills {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.skills h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-family: 'Inter';
+  font-weight: 900;
+}
+
+.skills-grid-wrapper {
+  position: absolute;
+  top: 123%;
+  left: 50%;
+  transform: translateX(-53%);
+  width: 1150px;
+  height: 55%;
+  max-width: 100%;
+  background-color: #000000;
+  border-radius: 50px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  padding: 30px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .skills-grid-wrapper {
+    width: 90%;
+    height: auto;
+    top: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    padding: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .skills-grid-wrapper {
+    position: static; /* ⬅️ Drop absolute layout */
+    width: 100%;
+    transform: none;
+    margin-top: 40px;
+    height: auto;
+    border-radius: 24px;
+    padding: 20px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .skills-grid-wrapper {
+    padding: 15px;
+    border-radius: 20px;
+  }
+}
+
+
+
+/* Skills grid container */
+.skills-grid {
+  position: relative; /* to stack above wrapper */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 24px;
+  color: black;
+  background: transparent;
+  z-index: 10;
+}
+
+/* Inner grid container for skill cards */
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+   padding: 30px;
+   border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Individual skill cards */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border: 3px solid black;
+  border-radius: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background: white;
+  z-index: 10;
+}
+
+.skill-card img,
+.skill-card svg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.skill-card p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Hover effect */
+.skill-card:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* SVG hover color change */
+.skill-card svg:hover path {
+  fill: white;
+}
+
+/*PROJECT
+/* Project Section Styles */
+#project {
+  padding: 40px;
+  background: #ffffff;
+}
+
+#project h2 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 30px;
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-family: 'Inter';
+  font-weight: 900;
+}
+
+.project-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.project-image {
+  width: 700px;
+  max-width: 100%;
+  height: 350px;
+  margin-top: 50px;
+  border-radius: 10px;
+  margin-right: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-content {
+  flex: 1;
+  min-width: 250px;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  color: #000000;
+   font-family: 'Inter';
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.project-content h1 {
+  font-size: 30px;
+  color: #000000;
+  font-family: 'Inter';
+  font-weight: 700;
+  text-align: left;
+  margin-top: 15px;
+  
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.project-card-vertical {
+  max-width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-top: 100px;
+}
+
+.project-image-vertical {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-content-vertical {
+  padding: 20px;
+}
+
+.project-content-vertical h1 {
+  font-size: 30px;
+  color: #000000;
+  font-family: 'Inter';
+  font-weight: 700;
+  text-align: left;
+  margin-top: 20px;
+}
+
+
+.project-content-vertical h3 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 10px;
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.project-content-vertical p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+/* Graphic Designs Section */
+#graphic-designs {
+  padding: 50px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+#graphic-designs h2 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 30px;
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-family: 'Inter';
+  font-weight: 900;
+}
+
+.design-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.design-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.design-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.center-button {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.center-button .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter';
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.center-button .btn:hover {
+  background-color: #2d2d2d;
+}
+
+
+/* 🌐 MEDIA QUERIES & RESPONSIVENESS */
+@media (max-width: 992px) {
+  .intro {
+    padding: 60px 30px;
+    gap: 20px;
+  }
+
+  .intro-text {
+    padding: 40px 0;
+  }
+
+  .project-card,
+  .project-card-vertical {
+    flex-direction: column;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+
+  .project-content h3 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .resume-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .intro {
+    flex-direction: column;
+    padding: 40px 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-text {
+    max-width: 100%;
+  }
+
+  .intro-text h1 {
+    font-size: 28px;
+  }
+
+  .intro-text h2 {
+    font-size: 22px;
+  }
+
+  .circle-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+
+  .skills h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .skills-grid {
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .skills-grid-wrapper {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 24px;
+  }
+
+  .skills-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+
+  .design-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 24px;
+  }
+
+  .intro-text h2 {
+    font-size: 18px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+
+  .skills-grid-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .design-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-content h1,
+  .project-content-vertical h1 {
+    font-size: 20px;
+  }
+
+  .project-content h3,
+  .project-content-vertical h3 {
+    font-size: 32px;
+  }
+}
+
+/* ✨ ANIMATIONS */
+
+/* Fade in entire intro */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.intro {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+/* Slide up + fade in */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-text h1,
+.intro-text h2,
+.intro-text p {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: slideUpFadeIn;
+  animation-duration: 0.6s;
+  animation-timing-function: ease;
+}
+
+.intro-text h1 { animation-delay: 0.3s; }
+.intro-text h2 { animation-delay: 0.5s; }
+.intro-text p  { animation-delay: 0.7s; }
+
+/* Scale + fade for avatar/circle */
+@keyframes scaleFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.circle-placeholder {
+  opacity: 0;
+  animation: scaleFadeIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Additional Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 💡 Fade-in for skills */
+.skill-card {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+/* Add more nth-child delays as needed */
+
+/* 💡 Project fade-in */
+.project-card,
+.project-card-vertical {
+  opacity: 0;
+  animation: fadeZoomIn 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+
