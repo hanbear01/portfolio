@@ -184,7 +184,7 @@ body {
 
   .intro-text h1,
   .intro-text h2 {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   .intro-text p {
@@ -204,7 +204,7 @@ body {
     font-size: 12px;
   }
   .outline {
-    font-size: 28px;
+    font-size: 23px;
   }
 
   .circle-placeholder {
@@ -361,22 +361,34 @@ body.menu-open {
   padding: 30px;
 }
 
-/* RESPONSIVE: Just scale down on smaller screens */
 @media (max-width: 768px) {
   .skills-grid-wrapper {
-    transform: translateX(-50%) scale(0.9); /* scale down but keep X-centered */
-    transform-origin: top center;
-     height: 100%;
+    transform: translateX(-50%) scale(0.85); /* Maintain position, slightly smaller */
+    transform-origin: center;
+    width: 90vw; /* Full width on small screens */
+    height: auto; /* Adjust height to fit grid */
+    display: grid;
+    padding: 0%;
+  }
+
+  .skills-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-auto-rows: auto; /* Auto rows */
+    gap: 12px;
+    padding: 20px;
+    border-radius: 10px;
   }
 
   .skill-card {
-    padding: 20px;
+    padding: 10px;
+    width: 100%;
   }
 
   .skill-card img,
   .skill-card svg {
-    width: 45px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
     margin-bottom: 10px;
   }
 
@@ -385,9 +397,11 @@ body.menu-open {
   }
 
   .skills h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
+
+
 
 @media (max-width: 480px) {
   .skills-grid-wrapper {
@@ -524,7 +538,7 @@ body.menu-open {
 /* Graphic Designs Section */
 #graphic-designs {
   padding: 50px;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   text-align: center;
 }
 
@@ -556,6 +570,43 @@ body.menu-open {
 .design-gallery img:hover {
   transform: scale(1.05);
 }
+
+/* Responsive: Tablets */
+@media (max-width: 1024px) {
+  .design-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .design-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .design-gallery img {
+    border-radius: 8px;
+  }
+}
+
+/* Responsive: Small Mobile */
+@media (max-width: 480px) {
+  .design-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .design-gallery img {
+    border-radius: 6px;
+  }
+
+  #graphic-designs h2 {
+    font-size: 24px;
+  }
+}
+
+
 
 .center-button {
   margin-top: 40px;
@@ -649,35 +700,39 @@ body.menu-open {
     height: 180px;
   }
 
-
-  .design-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
+/*PROJECT PHONE*/
 @media (max-width: 480px) {
   .intro-text h1 {
     font-size: 24px;
   }
 
   .intro-text h2 {
-    font-size: 18px;
+    font-size: 28px;
   }
 
-
-  .design-gallery {
-    grid-template-columns: 1fr;
+  #project h2 {
+    font-size: 25px;
   }
+
 
   .project-content h1,
   .project-content-vertical h1 {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .project-content h3,
   .project-content-vertical h3 {
-    font-size: 20px;
+    font-size: 25px;
   }
+
+   .project-content p,
+   .project-content-vertical p{
+    font-size: 14px;
+   }
+
+   
 }
 
 /* ✨ ANIMATIONS */
