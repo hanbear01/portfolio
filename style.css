@@ -119,6 +119,9 @@ body {
 .circle-placeholder {
   width: 550px;
   height: 550px;
+  background-image: url('IMG_20241102_224601_417.jpg');
+  background-size: cover;
+  background-position: center;
   background-color: black;
   border-radius: 50%;
   transition: all 0.3s ease;
@@ -269,20 +272,6 @@ body.menu-open {
   font-weight: 900;
 }
 
-.skills-grid-wrapper {
-  position: absolute;
-  top: 123%;
-  left: 50%;
-  transform: translateX(-53%);
-  width: 1150px;
-  height: 55%;
-  max-width: 100%;
-  background-color: #000000;
-  border-radius: 50px;
-  z-index: 1;
-  transition: all 0.3s ease;
-  padding: 30px;
-}
 
 
 /* Skills grid container */
