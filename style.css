@@ -158,13 +158,17 @@ body {
     height: 400px;
   }
 
-  .intro-text h1,
+
+  .intro-text h1{
+        font-size: 50px;
+  }
   .intro-text h2 {
     font-size: 42px;
+    margin-top: -40px;
   }
 
   .outline {
-    font-size: 42px;
+    font-size: 30px;
   }
 
   .line {
@@ -187,7 +191,7 @@ body {
 
   .intro-text h1,
   .intro-text h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .intro-text p {
@@ -206,13 +210,11 @@ body {
   .resume-button1{
     font-size: 12px;
   }
-  .outline {
-    font-size: 23px;
-  }
+
 
   .circle-placeholder {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
 
   .line {
@@ -677,17 +679,10 @@ body.menu-open {
     max-width: 100%;
   }
 
-  .intro-text h1 {
-    font-size: 28px;
-  }
-
-  .intro-text h2 {
-    font-size: 22px;
-  }
-
+/*PHONE PHOTO*/
   .circle-placeholder {
-    width: 180px;
-    height: 180px;
+    width: 300px;
+    height: 300px;
   }
 
 }
@@ -695,7 +690,7 @@ body.menu-open {
 /*PROJECT PHONE*/
 @media (max-width: 480px) {
   .intro-text h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .intro-text h2 {
